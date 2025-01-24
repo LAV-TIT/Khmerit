@@ -1,0 +1,1 @@
+{$fielddef->GetValue()}

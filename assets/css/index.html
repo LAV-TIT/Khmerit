@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div class="share_wrapper">
+        <p class="share_title">Share this content:</p>
+        <ul class="share_list">
+            <li class="share_item">
+                <button class="share_link share_link_facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                    <span class="sr-only">Share on Facebook</span>
+                </button>
+            </li>
+            <li class="share_item">
+                <button class="share_link share_link_twitter">
+                    <i class="fab fa-twitter fa-2x"></i>
+                    <span class="sr-only">Share on Twitter</span>
+                </button>
+            </li>
+            <li class="share_item">
+                <button class="share_link share_link_linkedin">
+                    <i class="fab fa-linkedin-in fa-2x"></i>
+                    <span class="sr-only">Share on LinkedIn</span>
+                </button>
+            </li>
+            <li class="share_item">
+                <button class="share_link share_link_mail">
+                    <i class="far fa-envelope fa-2x"></i>
+                    <span class="sr-only">Share via Mail</span>
+                </button>
+            </li>
+            <li class="share_item">
+                <button class="share_link share_link_whatsapp">
+                    <i class="fab fa-whatsapp fa-2x"></i>
+                    <span class="sr-only">Share on WhatsApp</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        window.onload = setShareLinks;
+
+        function setShareLinks() {
+            var pageUrl = encodeURIComponent(document.URL);
+            var pageTitle = encodeURIComponent(document.title);
+
+            document.addEventListener('click', function (event) {
+                let url = null;
+                if (event.target.classList.contains('share_link_facebook')) {
+                    url = "https://www.facebook.com/sharer.php?u=" + pageUrl;
+                    socialWindow(url, 570, 570);
+                }
+
+                if (event.target.classList.contains('share_link_twitter')) {
+                    url = "https://twitter.com/intent/tweet?url=" + pageUrl + "&text=" + pageTitle;
+                    socialWindow(url, 570, 300);
+                }
+
+                if (event.target.classList.contains('share_link_linkedin')) {
+                    url = "https://www.linkedin.com/shareArticle?mini=true&url=" + pageUrl;
+                    socialWindow(url, 570, 570);
+                }
+
+                if (event.target.classList.contains('share_link_whatsapp')) {
+                    url = "whatsapp://send?text=" + pageTitle + "%20" + pageUrl;
+                    socialWindow(url, 570, 450);
+                }
+
+                if (event.target.classList.contains('share_link_mail')) {
+                    url = "mailto:?subject=%22" + pageTitle + "%22&body=Read%20the%20article%20%22" + pageTitle + "%22%20on%20" + pageUrl;
+                    socialWindow(url, 570, 450);
+                }
+
+            }, false);
+        }
+
+        function socialWindow(url, width, height) {
+            var left = (screen.width - width) / 2;
+            var top = (screen.height - height) / 2;
+            var params = "menubar=no,toolbar=no,status=no,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left;
+            window.open(url, "", params);
+        }
+    </script>
+
+    <script>
+        window.onload = setShareLinks;
+        function setShareLinks() {
+            // Share Facebook
+            let btnShareFacebook = document.querySelectorAll(".share_link_facebook");
+            for (var i = 0; i < btnShareFacebook.length; i++) {
+                btnShareFacebook[i].addEventListener("click", function (event) {
+                    let url = null;
+                    url = "https://www.facebook.com/sharer.php?u=" + this.getAttribute("data-url");
+                    socialWindow(url, 570, 300);
+                }, false);
+            }
+
+            // Share Twittwer
+            let btnShareTwitter = document.querySelectorAll(".share_link_twitter");
+            for (var i = 0; i < btnShareTwitter.length; i++) {
+                btnShareTwitter[i].addEventListener("click", function (event) {
+                    let url = null;
+                    url = "https://twitter.com/intent/tweet?url=" + this.getAttribute("data-url") + "&text=" + this.getAttribute("data-title");
+                    socialWindow(url, 570, 300);
+                }, false);
+            }
+
+            // Share Linkedin
+            let btnShareLinkedin = document.querySelectorAll(".share_link_linkedin");
+            for (var i = 0; i < btnShareLinkedin.length; i++) {
+                btnShareLinkedin[i].addEventListener("click", function (event) {
+                    let url = null;
+                    url = "https://www.linkedin.com/shareArticle?mini=true&url=" + this.getAttribute("data-url");
+                    socialWindow(url, 570, 300);
+                }, false);
+            }
+
+            // Share WhatsApp
+            let btnShareWhatsApp = document.querySelectorAll(".share_link_whatsapp");
+            for (var i = 0; i < btnShareWhatsApp.length; i++) {
+                btnShareWhatsApp[i].addEventListener("click", function (event) {
+                    let url = null;
+                    url = "whatsapp://send?text=" + this.getAttribute("data-title") + "%20" + this.getAttribute("data-url");
+                    socialWindow(url, 570, 300);
+                }, false);
+            }
+
+            // Share Send Mail
+            let btnShareSendMail = document.querySelectorAll(".share_link_mail");
+            for (var i = 0; i < btnShareSendMail.length; i++) {
+                btnShareSendMail[i].addEventListener("click", function (event) {
+                    let url = null;
+                    url = "mailto:?subject=%22" + this.getAttribute("data-title") + "%22&body=Read%20the%20article%20%22" + this.getAttribute("data-title") + "%22%20on%20" + this.getAttribute("data-url");
+                    socialWindow(url, 570, 450);
+                }, false);
+            }
+
+        }// END socialWindow function
+
+        function socialWindow(url, width, height) {
+            var left = (screen.width - width) / 2;
+            var top = (screen.height - height) / 2;
+            var params = "menubar=no,toolbar=no,status=no,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left;
+            window.open(url, "", params);
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="site-section">
+    <div class="container">
+        {if $items|@count > 0}
+        <h1 class="text-center under-line">{title}</h1>
+        <div class="row">
+            {foreach from=$items item=item}
+
+            {if $smarty.server.REQUEST_URI|strstr:"tag"}
+            {assign var="tagwords" value=","|explode:$item->tags}
+            {foreach from=$tagwords item=tag}
+            {if ($smarty.get.tag == $tag|lower)}
+
+            {assign var="j" value="{$item->alias}"}
+            <div class="col-md-4 col-sm-6 col-12 mb-4">
+                <div>
+                    <div class="img-blog">
+                        <a href="{$item->url}" title="{$item->title}"><img class="img-fluid rounded mb-3" loading="lazy"
+                                src="assets/images/lazy-load-placeholder.svg" data-src="uploads/{$item->main_photo}"
+                                alt="{$item->title}"></a>
+                    </div>
+
+                    <div class="blog-content mt-2">
+                        <h3 class="item-title">{$item->title}</h3>
+                        <div class="content-blog">{$item->content_blog|truncate:100:"...":true}</div>
+                        <span class="date">{$item->create_time|date_format:"%A, %B %e, %Y %H:%M %S"}</span>
+                        <div class="w-100 mt-2">
+                            <a class="btn-menu" href="{$item->url}" title="{$item->title}">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-relative">
+                    <!--=======-->
+                    <div class="btn_share_first">
+                        <div class="modal fade" id="travel_block-{$j}" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel-{$j}" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title text-center">Share</h3>
+                                        <button type="button" class="btn_modal" data-bs-dismiss="modal"
+                                            aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <ul class="share__list">
+                                            <li class="share__item">
+                                                <button class="share__link  share__link--facebook"
+                                                    data-url="{$item->url}" data-title="{$item->title}">
+                                                    <i class="fa-brands fa-facebook" style="color: #145bd7;"></i>
+                                                </button>
+                                            </li>
+                                            <li class="share__item">
+                                                <button class="share__link share__link--twitter" data-url="{$item->url}"
+                                                    data-title="{$item->title}">
+                                                    <i class="fa-brands fa-twitter" style="color: #145bd7;"></i>
+
+                                                </button>
+                                            </li>
+                                            <li class="share__item">
+                                                <button class="share__link share__link--linkedin"
+                                                    data-url="{$item->url}" data-title="{$item->title}">
+                                                    <i class="fa-brands fa-linkedin-in" style="color: #145bd7;"></i>
+
+                                                </button>
+                                            </li>
+                                            <li class="share__item">
+                                                <button class="share__link share__link--mail" data-url="{$item->url}"
+                                                    data-title="{$item->title}">
+                                                    <i class="fa-regular fa-envelope" style="color: #c30404;"></i>
+                                                </button>
+                                            </li>
+                                            <li class="share__item">
+                                                <button class="share__link share__link--whatsapp"
+                                                    data-url="{$item->url}" data-title="{$item->title}">
+                                                    <i class="fa-brands fa-whatsapp" style="color: #34c50d;"></i>
+
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="btn_modal_first" data-bs-toggle="modal" href="#travel_block-{$j}" role="button"><i
+                                class="fa-regular fa-share-from-square"></i></a>
+                        <!--===========-->
+                    </div>
+                </div>
+            </div>
+            {/if}
+            {/foreach}
+
+            {else}
+
+            <div class="col-md-4 col-sm-6 col-12 mb-4">
+                <div>
+                    <div class="img-blog">
+                        <a href="{$item->url}" title="{$item->title}"><img class="img-fluid rounded mb-3" loading="lazy"
+                                src="assets/images/lazy-load-placeholder.svg" data-src="uploads/{$item->main_photo}"
+                                alt="{$item->title}"></a>
+                    </div>
+
+                    <div class="blog-content mt-2">
+                        <h3 class="item-title">{$item->title}</h3>
+                        <div class="content-blog">{$item->content_blog|truncate:100:"...":true}</div>
+                        <span class="date">{$item->create_time|date_format:"%A, %B %e, %Y %H:%M %S"}</span>
+                        <div class="w-100 mt-2">
+                            <a class="btn-menu" href="{$item->url}" title="{$item->title}">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-relative">
+                    <!--=======-->
+                    <div class="btn_share_first">
+                        <div class="modal fade" id="travel_block-{$j}" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel-{$j}" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title text-center">Share</h3>
+                                        <button type="button" class="btn_modal" data-bs-dismiss="modal"
+                                            aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <ul class="share__list">
+                                            <li class="share__item">
+                                                <button class="share__link  share__link--facebook"
+                                                    data-url="{$item->url}" data-title="{$item->title}">
+                                                    <i class="fa-brands fa-facebook" style="color: #145bd7;"></i>
+                                                </button>
+                                            </li>
+                                            <li class="share__item">
+                                                <button class="share__link share__link--twitter" data-url="{$item->url}"
+                                                    data-title="{$item->title}">
+                                                    <i class="fa-brands fa-twitter" style="color: #145bd7;"></i>
+
+                                                </button>
+                                            </li>
+                                            <li class="share__item">
+                                                <button class="share__link share__link--linkedin"
+                                                    data-url="{$item->url}" data-title="{$item->title}">
+                                                    <i class="fa-brands fa-linkedin-in" style="color: #145bd7;"></i>
+
+                                                </button>
+                                            </li>
+                                            <li class="share__item">
+                                                <button class="share__link share__link--mail" data-url="{$item->url}"
+                                                    data-title="{$item->title}">
+                                                    <i class="fa-regular fa-envelope" style="color: #c30404;"></i>
+                                                </button>
+                                            </li>
+                                            <li class="share__item">
+                                                <button class="share__link share__link--whatsapp"
+                                                    data-url="{$item->url}" data-title="{$item->title}">
+                                                    <i class="fa-brands fa-whatsapp" style="color: #34c50d;"></i>
+
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="btn_modal_first" data-bs-toggle="modal" href="#travel_block-{$j}" role="button"><i
+                                class="fa-regular fa-share-from-square"></i></a>
+                        <!--===========-->
+                    </div>
+                </div>
+            </div>
+
+            {/if}
+            {/foreach}
+        </div>
+        {/if}
+    </div>
+</section>

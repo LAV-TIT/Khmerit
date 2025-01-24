@@ -1,0 +1,1 @@
+{$value = $fielddef->GetValue('array')} {implode(', ', $value)}

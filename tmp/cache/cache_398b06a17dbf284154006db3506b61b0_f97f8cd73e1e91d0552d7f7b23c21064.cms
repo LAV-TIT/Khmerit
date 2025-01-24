@@ -1,0 +1,315 @@
+__SERIALIZED__a:209:{s:8:"sitemask";s:16:"4e3f8d74d10ea80b";s:15:"sitedownmessage";s:45:"<p>Site is currently down for maintenance</p>";s:8:"metadata";s:266:"<meta name="Generator" content="Khmer-IT - Copyright (C) 2024-2025. All rights reserved." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="uploads/images/{$LISEGlobalContent.logo_dark}" type="image/x-icon">
+";s:12:"global_umask";s:3:"022";s:20:"auto_clear_cache_age";s:2:"60";s:17:"adminlog_lifetime";s:7:"2678400";s:19:"allow_browser_cache";s:1:"1";s:20:"browser_cache_expiry";s:2:"60";s:21:"CMSMS\LoginOperations";s:40:"948251f4bec230af5804790a399fb572ab8d8188";s:8:"sitename";s:8:"Khmer IT";s:39:"CMSContentManager_mapi_pref_locktimeout";s:2:"60";s:39:"CMSContentManager_mapi_pref_lockrefresh";s:3:"120";s:36:"DesignManager_mapi_pref_lock_timeout";s:2:"60";s:36:"DesignManager_mapi_pref_lock_refresh";s:3:"120";s:34:"FileManager_mapi_pref_advancedmode";s:1:"0";s:30:"FileManager_mapi_pref_iconsize";s:4:"32px";s:37:"FileManager_mapi_pref_showhiddenfiles";s:1:"0";s:36:"FileManager_mapi_pref_showthumbnails";s:1:"1";s:39:"FileManager_mapi_pref_create_thumbnails";s:1:"1";s:37:"FileManager_mapi_pref_permissionstyle";s:3:"xxx";s:40:"MicroTiny_mapi_pref_profile___frontend__";s:179:"a:7:{s:4:"name";s:12:"__frontend__";s:5:"label";s:16:"Frontend Editors";s:7:"menubar";b:0;s:11:"allowimages";b:0;s:13:"showstatusbar";b:0;s:11:"allowresize";b:0;s:6:"system";b:1;}";s:37:"MicroTiny_mapi_pref_profile___admin__";s:172:"a:7:{s:4:"name";s:9:"__admin__";s:5:"label";s:13:"Admin Editors";s:7:"menubar";b:1;s:11:"allowimages";b:1;s:13:"showstatusbar";b:1;s:11:"allowresize";b:1;s:6:"system";b:1;}";s:41:"ModuleManager_mapi_pref_module_repository";s:58:"https://www.cmsmadesimple.org/ModuleRepository/request/v2/";s:28:"News_mapi_pref_email_subject";s:34:"A new News article has been posted";s:35:"News_mapi_pref_allowed_upload_types";s:16:"gif,png,jpeg,jpg";s:37:"News_mapi_pref_auto_create_thumbnails";s:16:"gif,png,jpeg,jpg";s:26:"Search_mapi_pref_stopwords";s:0:"";s:72:"LISEMediaSolutions_mapi_pref_lisemediasolutions_default_summary_template";s:7:"default";s:71:"LISEMediaSolutions_mapi_pref_lisemediasolutions_default_detail_template";s:7:"default";s:71:"LISEMediaSolutions_mapi_pref_lisemediasolutions_default_search_template";s:7:"default";s:73:"LISEMediaSolutions_mapi_pref_lisemediasolutions_default_category_template";s:7:"default";s:72:"LISEMediaSolutions_mapi_pref_lisemediasolutions_default_archive_template";s:7:"default";s:38:"LISEMediaSolutions_mapi_pref_sortorder";s:3:"ASC";s:41:"LISEMediaSolutions_mapi_pref_adminsection";s:7:"content";s:28:"Search_mapi_pref_usestemming";s:5:"false";s:27:"Search_mapi_pref_searchtext";s:15:"Enter Search...";s:36:"UserGuide_mapi_pref_customModuleName";s:10:"User Guide";s:32:"UserGuide_mapi_pref_adminSection";s:4:"main";s:29:"UserGuide_mapi_pref_useSmarty";s:1:"1";s:31:"UserGuide_mapi_pref_imageFolder";s:0:"";s:39:"CmsJobManager_mapi_pref_tasks_lastcheck";s:10:"1737713821";s:22:"ClearCache_lastexecute";s:10:"1737698808";s:42:"CmsJobManager_mapi_pref_last_async_trigger";s:10:"1737713822";s:39:"CmsJobManager_mapi_pref_last_badjob_run";s:10:"1737712434";s:43:"Gallery_mapi_pref_default_template_contents";s:23540:"<div class="gallery">
+{if !empty($module_message)}<h4>{$module_message|escape}</h4>{/if}
+{if !empty($gallerytitle)}<h3>{$gallerytitle}</h3>{/if}
+{if !empty($gallerycomment)}<div class="gallerycomment">{$gallerycomment}</div>{/if}
+<p>{$imagecount}</p>
+<div class="pagenavigation">
+{if $pages > 1}
+<div class="prevpage">{$prevpage}</div>
+<div class="nextpage">{$nextpage}</div>
+{/if}
+{if !$hideparentlink && !empty($parentlink)}<div class="parentlink">{$parentlink}</div>{/if}
+{if $pages > 1}<div class="pagelinks">{$pagelinks}</div>{/if}
+</div>
+
+{foreach from=$images item=image}
+	<div class="img">
+	{if $image->isdir}
+		<a href="{$image->file}" title="{$image->titlename}"><img src="{$image->thumb}" alt="{$image->titlename}" /></a><br />
+		{$image->titlename}
+	{else}
+   <a class="group" href="{$image->file}" title="{$image->comment}" rel="prettyPhoto[{$galleryid}]"><img src="{$image->thumb}" alt="{$image->titlename}" /></a>
+	{/if}
+	</div>
+{/foreach}
+<div class="galleryclear">&nbsp;</div>
+</div>{*----------.gallery .img {
+	height: 120px;
+	/*width: 120px;   Adjust as you see fit */
+	float: left;
+	margin: 10px;
+	text-align: center;
+}
+
+.gallery .img a {
+	display: inline-block;
+	border: 2px solid #ddd;
+	padding: 1px;
+}
+
+.gallery .img a:hover {
+	border-color: #999;
+}
+
+.gallery img {
+	border: none;
+}
+
+.gallery .pagenavigation {
+	height: 50px;
+}
+
+.gallery .prevpage a, .gallery .prevpage em {
+	display: block;
+	width: 50px;
+	height: 39px;
+	float: left;
+	margin: 0;
+	text-indent: -1000px;
+	background: url(../../images/previous.png) transparent no-repeat 0 0;
+	overflow: hidden;
+}
+
+.gallery .nextpage a, .gallery .nextpage em {
+	display: block;
+	width: 50px;
+	height: 39px;
+	float: left;
+	margin: 0 6px 0 0;
+	text-indent: -1000px;
+	background: url(../../images/next.png) transparent no-repeat 0 0;
+	overflow: hidden;
+}
+
+.gallery .parentlink a {
+	display: block;
+	width: 50px;
+	height: 39px;
+	float: left;
+	text-indent: -1000px;
+	background: url(../../images/uppage.png) transparent no-repeat 0 0;
+	overflow: hidden;
+}
+
+.gallery .pagenavigation a:hover {
+	background-position: 0 -40px;
+}
+
+.gallery .prevpage em, .gallery .nextpage em {
+	background-position: 0 -80px;
+}
+
+.gallery .pagelinks {
+	float: right;
+	border-right: 2px solid #666;
+}
+
+.gallery .pagelinks a, .gallery .pagelinks em {
+	margin-top: 6px;
+	padding: 0 6px;
+	border-left: 2px solid #666;
+	text-align: center;
+	font: bold 11px verdana; color: #666;
+}
+
+.gallery .pagelinks em {
+	color: #000;
+}
+
+.galleryclear {
+	clear: both;
+}
+
+
+/* PRETTYPHOTO  -  version 3.1.6 */
+
+div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top .pp_left,div.pp_default .pp_top .pp_right,div.pp_default .pp_bottom,div.pp_default .pp_bottom .pp_left,div.pp_default .pp_bottom .pp_middle,div.pp_default .pp_bottom .pp_right{height:13px}
+div.pp_default .pp_top .pp_left{background:url(../prettyphoto/images/default/sprite.png) -78px -93px no-repeat}
+div.pp_default .pp_top .pp_middle{background:url(../prettyphoto/images/default/sprite_x.png) top left repeat-x}
+div.pp_default .pp_top .pp_right{background:url(../prettyphoto/images/default/sprite.png) -112px -93px no-repeat}
+div.pp_default .pp_content .ppt{color:#f8f8f8}
+div.pp_default .pp_content_container .pp_left{background:url(../prettyphoto/images/default/sprite_y.png) -7px 0 repeat-y;padding-left:13px}
+div.pp_default .pp_content_container .pp_right{background:url(../prettyphoto/images/default/sprite_y.png) top right repeat-y;padding-right:13px}
+div.pp_default .pp_next:hover{background:url(../prettyphoto/images/default/sprite_next.png) center right no-repeat;cursor:pointer}
+div.pp_default .pp_previous:hover{background:url(../prettyphoto/images/default/sprite_prev.png) center left no-repeat;cursor:pointer}
+div.pp_default .pp_expand{background:url(../prettyphoto/images/default/sprite.png) 0 -29px no-repeat;cursor:pointer;width:28px;height:28px}
+div.pp_default .pp_expand:hover{background:url(../prettyphoto/images/default/sprite.png) 0 -56px no-repeat;cursor:pointer}
+div.pp_default .pp_contract{background:url(../prettyphoto/images/default/sprite.png) 0 -84px no-repeat;cursor:pointer;width:28px;height:28px}
+div.pp_default .pp_contract:hover{background:url(../prettyphoto/images/default/sprite.png) 0 -113px no-repeat;cursor:pointer}
+div.pp_default .pp_close{width:30px;height:30px;background:url(../prettyphoto/images/default/sprite.png) 2px 1px no-repeat;cursor:pointer}
+div.pp_default .pp_gallery ul li a{background:url(../prettyphoto/images/default/default_thumb.png) center center #f8f8f8;border:1px solid #aaa}
+div.pp_default .pp_social{margin-top:7px}
+div.pp_default .pp_gallery a.pp_arrow_previous,div.pp_default .pp_gallery a.pp_arrow_next{position:static;left:auto}
+div.pp_default .pp_nav .pp_play,div.pp_default .pp_nav .pp_pause{background:url(../prettyphoto/images/default/sprite.png) -51px 1px no-repeat;height:30px;width:30px}
+div.pp_default .pp_nav .pp_pause{background-position:-51px -29px}
+div.pp_default a.pp_arrow_previous,div.pp_default a.pp_arrow_next{background:url(../prettyphoto/images/default/sprite.png) -31px -3px no-repeat;height:20px;width:20px;margin:4px 0 0}
+div.pp_default a.pp_arrow_next{left:52px;background-position:-82px -3px}
+div.pp_default .pp_content_container .pp_details{margin-top:5px}
+div.pp_default .pp_nav{clear:none;height:30px;width:110px;position:relative}
+div.pp_default .pp_nav .currentTextHolder{font-family:Georgia;font-style:italic;color:#999;font-size:11px;left:75px;line-height:25px;position:absolute;top:2px;margin:0;padding:0 0 0 10px}
+div.pp_default .pp_close:hover,div.pp_default .pp_nav .pp_play:hover,div.pp_default .pp_nav .pp_pause:hover,div.pp_default .pp_arrow_next:hover,div.pp_default .pp_arrow_previous:hover{opacity:0.7}
+div.pp_default .pp_description{font-size:11px;font-weight:700;line-height:14px;margin:5px 50px 5px 0}
+div.pp_default .pp_bottom .pp_left{background:url(../prettyphoto/images/default/sprite.png) -78px -127px no-repeat}
+div.pp_default .pp_bottom .pp_middle{background:url(../prettyphoto/images/default/sprite_x.png) bottom left repeat-x}
+div.pp_default .pp_bottom .pp_right{background:url(../prettyphoto/images/default/sprite.png) -112px -127px no-repeat}
+div.pp_default .pp_loaderIcon{background:url(../prettyphoto/images/default/loader.gif) center center no-repeat}
+div.light_rounded .pp_top .pp_left{background:url(../prettyphoto/images/light_rounded/sprite.png) -88px -53px no-repeat}
+div.light_rounded .pp_top .pp_right{background:url(../prettyphoto/images/light_rounded/sprite.png) -110px -53px no-repeat}
+div.light_rounded .pp_next:hover{background:url(../prettyphoto/images/light_rounded/btnNext.png) center right no-repeat;cursor:pointer}
+div.light_rounded .pp_previous:hover{background:url(../prettyphoto/images/light_rounded/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.light_rounded .pp_expand{background:url(../prettyphoto/images/light_rounded/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.light_rounded .pp_expand:hover{background:url(../prettyphoto/images/light_rounded/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.light_rounded .pp_contract{background:url(../prettyphoto/images/light_rounded/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.light_rounded .pp_contract:hover{background:url(../prettyphoto/images/light_rounded/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.light_rounded .pp_close{width:75px;height:22px;background:url(../prettyphoto/images/light_rounded/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.light_rounded .pp_nav .pp_play{background:url(../prettyphoto/images/light_rounded/sprite.png) -1px -100px no-repeat;height:15px;width:14px}
+div.light_rounded .pp_nav .pp_pause{background:url(../prettyphoto/images/light_rounded/sprite.png) -24px -100px no-repeat;height:15px;width:14px}
+div.light_rounded .pp_arrow_previous{background:url(../prettyphoto/images/light_rounded/sprite.png) 0 -71px no-repeat}
+div.light_rounded .pp_arrow_next{background:url(../prettyphoto/images/light_rounded/sprite.png) -22px -71px no-repeat}
+div.light_rounded .pp_bottom .pp_left{background:url(../prettyphoto/images/light_rounded/sprite.png) -88px -80px no-repeat}
+div.light_rounded .pp_bottom .pp_right{background:url(../prettyphoto/images/light_rounded/sprite.png) -110px -80px no-repeat}
+div.dark_rounded .pp_top .pp_left{background:url(../prettyphoto/images/dark_rounded/sprite.png) -88px -53px no-repeat}
+div.dark_rounded .pp_top .pp_right{background:url(../prettyphoto/images/dark_rounded/sprite.png) -110px -53px no-repeat}
+div.dark_rounded .pp_content_container .pp_left{background:url(../prettyphoto/images/dark_rounded/contentPattern.png) top left repeat-y}
+div.dark_rounded .pp_content_container .pp_right{background:url(../prettyphoto/images/dark_rounded/contentPattern.png) top right repeat-y}
+div.dark_rounded .pp_next:hover{background:url(../prettyphoto/images/dark_rounded/btnNext.png) center right no-repeat;cursor:pointer}
+div.dark_rounded .pp_previous:hover{background:url(../prettyphoto/images/dark_rounded/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.dark_rounded .pp_expand{background:url(../prettyphoto/images/dark_rounded/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.dark_rounded .pp_expand:hover{background:url(../prettyphoto/images/dark_rounded/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.dark_rounded .pp_contract{background:url(../prettyphoto/images/dark_rounded/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.dark_rounded .pp_contract:hover{background:url(../prettyphoto/images/dark_rounded/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.dark_rounded .pp_close{width:75px;height:22px;background:url(../prettyphoto/images/dark_rounded/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.dark_rounded .pp_description{margin-right:85px;color:#fff}
+div.dark_rounded .pp_nav .pp_play{background:url(../prettyphoto/images/dark_rounded/sprite.png) -1px -100px no-repeat;height:15px;width:14px}
+div.dark_rounded .pp_nav .pp_pause{background:url(../prettyphoto/images/dark_rounded/sprite.png) -24px -100px no-repeat;height:15px;width:14px}
+div.dark_rounded .pp_arrow_previous{background:url(../prettyphoto/images/dark_rounded/sprite.png) 0 -71px no-repeat}
+div.dark_rounded .pp_arrow_next{background:url(../prettyphoto/images/dark_rounded/sprite.png) -22px -71px no-repeat}
+div.dark_rounded .pp_bottom .pp_left{background:url(../prettyphoto/images/dark_rounded/sprite.png) -88px -80px no-repeat}
+div.dark_rounded .pp_bottom .pp_right{background:url(../prettyphoto/images/dark_rounded/sprite.png) -110px -80px no-repeat}
+div.dark_rounded .pp_loaderIcon{background:url(../prettyphoto/images/dark_rounded/loader.gif) center center no-repeat}
+div.dark_square .pp_left,div.dark_square .pp_middle,div.dark_square .pp_right,div.dark_square .pp_content{background:#000}
+div.dark_square .pp_description{color:#fff;margin:0 85px 0 0}
+div.dark_square .pp_loaderIcon{background:url(../prettyphoto/images/dark_square/loader.gif) center center no-repeat}
+div.dark_square .pp_expand{background:url(../prettyphoto/images/dark_square/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.dark_square .pp_expand:hover{background:url(../prettyphoto/images/dark_square/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.dark_square .pp_contract{background:url(../prettyphoto/images/dark_square/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.dark_square .pp_contract:hover{background:url(../prettyphoto/images/dark_square/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.dark_square .pp_close{width:75px;height:22px;background:url(../prettyphoto/images/dark_square/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.dark_square .pp_nav{clear:none}
+div.dark_square .pp_nav .pp_play{background:url(../prettyphoto/images/dark_square/sprite.png) -1px -100px no-repeat;height:15px;width:14px}
+div.dark_square .pp_nav .pp_pause{background:url(../prettyphoto/images/dark_square/sprite.png) -24px -100px no-repeat;height:15px;width:14px}
+div.dark_square .pp_arrow_previous{background:url(../prettyphoto/images/dark_square/sprite.png) 0 -71px no-repeat}
+div.dark_square .pp_arrow_next{background:url(../prettyphoto/images/dark_square/sprite.png) -22px -71px no-repeat}
+div.dark_square .pp_next:hover{background:url(../prettyphoto/images/dark_square/btnNext.png) center right no-repeat;cursor:pointer}
+div.dark_square .pp_previous:hover{background:url(../prettyphoto/images/dark_square/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.light_square .pp_expand{background:url(../prettyphoto/images/light_square/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.light_square .pp_expand:hover{background:url(../prettyphoto/images/light_square/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.light_square .pp_contract{background:url(../prettyphoto/images/light_square/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.light_square .pp_contract:hover{background:url(../prettyphoto/images/light_square/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.light_square .pp_close{width:75px;height:22px;background:url(../prettyphoto/images/light_square/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.light_square .pp_nav .pp_play{background:url(../prettyphoto/images/light_square/sprite.png) -1px -100px no-repeat;height:15px;width:14px}
+div.light_square .pp_nav .pp_pause{background:url(../prettyphoto/images/light_square/sprite.png) -24px -100px no-repeat;height:15px;width:14px}
+div.light_square .pp_arrow_previous{background:url(../prettyphoto/images/light_square/sprite.png) 0 -71px no-repeat}
+div.light_square .pp_arrow_next{background:url(../prettyphoto/images/light_square/sprite.png) -22px -71px no-repeat}
+div.light_square .pp_next:hover{background:url(../prettyphoto/images/light_square/btnNext.png) center right no-repeat;cursor:pointer}
+div.light_square .pp_previous:hover{background:url(../prettyphoto/images/light_square/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.facebook .pp_top .pp_left{background:url(../prettyphoto/images/facebook/sprite.png) -88px -53px no-repeat}
+div.facebook .pp_top .pp_middle{background:url(../prettyphoto/images/facebook/contentPatternTop.png) top left repeat-x}
+div.facebook .pp_top .pp_right{background:url(../prettyphoto/images/facebook/sprite.png) -110px -53px no-repeat}
+div.facebook .pp_content_container .pp_left{background:url(../prettyphoto/images/facebook/contentPatternLeft.png) top left repeat-y}
+div.facebook .pp_content_container .pp_right{background:url(../prettyphoto/images/facebook/contentPatternRight.png) top right repeat-y}
+div.facebook .pp_expand{background:url(../prettyphoto/images/facebook/sprite.png) -31px -26px no-repeat;cursor:pointer}
+div.facebook .pp_expand:hover{background:url(../prettyphoto/images/facebook/sprite.png) -31px -47px no-repeat;cursor:pointer}
+div.facebook .pp_contract{background:url(../prettyphoto/images/facebook/sprite.png) 0 -26px no-repeat;cursor:pointer}
+div.facebook .pp_contract:hover{background:url(../prettyphoto/images/facebook/sprite.png) 0 -47px no-repeat;cursor:pointer}
+div.facebook .pp_close{width:22px;height:22px;background:url(../prettyphoto/images/facebook/sprite.png) -1px -1px no-repeat;cursor:pointer}
+div.facebook .pp_description{margin:0 37px 0 0}
+div.facebook .pp_loaderIcon{background:url(../prettyphoto/images/facebook/loader.gif) center center no-repeat}
+div.facebook .pp_arrow_previous{background:url(../prettyphoto/images/facebook/sprite.png) 0 -71px no-repeat;height:22px;margin-top:0;width:22px}
+div.facebook .pp_arrow_previous.disabled{background-position:0 -96px;cursor:default}
+div.facebook .pp_arrow_next{background:url(../prettyphoto/images/facebook/sprite.png) -32px -71px no-repeat;height:22px;margin-top:0;width:22px}
+div.facebook .pp_arrow_next.disabled{background-position:-32px -96px;cursor:default}
+div.facebook .pp_nav{margin-top:0}
+div.facebook .pp_nav p{font-size:15px;padding:0 3px 0 4px}
+div.facebook .pp_nav .pp_play{background:url(../prettyphoto/images/facebook/sprite.png) -1px -123px no-repeat;height:22px;width:22px}
+div.facebook .pp_nav .pp_pause{background:url(../prettyphoto/images/facebook/sprite.png) -32px -123px no-repeat;height:22px;width:22px}
+div.facebook .pp_next:hover{background:url(../prettyphoto/images/facebook/btnNext.png) center right no-repeat;cursor:pointer}
+div.facebook .pp_previous:hover{background:url(../prettyphoto/images/facebook/btnPrevious.png) center left no-repeat;cursor:pointer}
+div.facebook .pp_bottom .pp_left{background:url(../prettyphoto/images/facebook/sprite.png) -88px -80px no-repeat}
+div.facebook .pp_bottom .pp_middle{background:url(../prettyphoto/images/facebook/contentPatternBottom.png) top left repeat-x}
+div.facebook .pp_bottom .pp_right{background:url(../prettyphoto/images/facebook/sprite.png) -110px -80px no-repeat}
+div.pp_pic_holder a:focus{outline:none}
+div.pp_overlay{background:#000;display:none;left:0;position:absolute;top:0;width:100%;z-index:9500}
+div.pp_pic_holder{display:none;position:absolute;width:100px;z-index:10000}
+.pp_content{height:40px;min-width:40px}
+* html .pp_content{width:40px}
+.pp_content_container{position:relative;text-align:left;width:100%}
+.pp_content_container .pp_left{padding-left:20px}
+.pp_content_container .pp_right{padding-right:20px}
+.pp_content_container .pp_details{float:left;margin:10px 0 2px}
+.pp_description{display:none;margin:0}
+.pp_social{float:left;margin:0}
+.pp_social .facebook{float:left;margin-left:5px;width:55px;overflow:hidden}
+.pp_social .twitter{float:left}
+.pp_nav{clear:right;float:left;margin:3px 10px 0 0}
+.pp_nav p{float:left;white-space:nowrap;margin:2px 4px}
+.pp_nav .pp_play,.pp_nav .pp_pause{float:left;margin-right:4px;text-indent:-10000px}
+a.pp_arrow_previous,a.pp_arrow_next{display:block;float:left;height:15px;margin-top:3px;overflow:hidden;text-indent:-10000px;width:14px}
+.pp_hoverContainer{position:absolute;top:0;width:100%;z-index:2000}
+.pp_gallery{display:none;left:50%;margin-top:-50px;position:absolute;z-index:10000}
+.pp_gallery div{float:left;overflow:hidden;position:relative}
+.pp_gallery ul{float:left;height:35px;position:relative;white-space:nowrap;margin:0 0 0 5px;padding:0}
+.pp_gallery ul a{border:1px rgba(0,0,0,0.5) solid;display:block;float:left;height:33px;overflow:hidden}
+.pp_gallery ul a img{border:0}
+.pp_gallery li{display:block;float:left;margin:0 5px 0 0;padding:0}
+.pp_gallery li.default a{background:url(../prettyphoto/images/facebook/default_thumbnail.gif) 0 0 no-repeat;display:block;height:33px;width:50px}
+.pp_gallery .pp_arrow_previous,.pp_gallery .pp_arrow_next{margin-top:7px!important}
+a.pp_next{background:url(../prettyphoto/images/light_rounded/btnNext.png) 10000px 10000px no-repeat;display:block;float:right;height:100%;text-indent:-10000px;width:49%}
+a.pp_previous{background:url(../prettyphoto/images/light_rounded/btnNext.png) 10000px 10000px no-repeat;display:block;float:left;height:100%;text-indent:-10000px;width:49%}
+a.pp_expand,a.pp_contract{cursor:pointer;display:none;height:20px;position:absolute;right:30px;text-indent:-10000px;top:10px;width:20px;z-index:20000}
+a.pp_close{position:absolute;right:0;top:0;display:block;line-height:22px;text-indent:-10000px}
+.pp_loaderIcon{display:block;height:24px;left:50%;position:absolute;top:50%;width:24px;margin:-12px 0 0 -12px}
+#pp_full_res{line-height:1!important}
+#pp_full_res .pp_inline{text-align:left}
+#pp_full_res .pp_inline p{margin:0 0 15px}
+div.ppt{color:#fff;display:none;font-size:17px;z-index:9999;margin:0 0 5px 15px}
+div.pp_default .pp_content,div.light_rounded .pp_content{background-color:#fff}
+div.pp_default #pp_full_res .pp_inline,div.light_rounded .pp_content .ppt,div.light_rounded #pp_full_res .pp_inline,div.light_square .pp_content .ppt,div.light_square #pp_full_res .pp_inline,div.facebook .pp_content .ppt,div.facebook #pp_full_res .pp_inline{color:#000}
+div.pp_default .pp_gallery ul li a:hover,div.pp_default .pp_gallery ul li.selected a,.pp_gallery ul a:hover,.pp_gallery li.selected a{border-color:#fff}
+div.pp_default .pp_details,div.light_rounded .pp_details,div.dark_rounded .pp_details,div.dark_square .pp_details,div.light_square .pp_details,div.facebook .pp_details{position:relative}
+div.light_rounded .pp_top .pp_middle,div.light_rounded .pp_content_container .pp_left,div.light_rounded .pp_content_container .pp_right,div.light_rounded .pp_bottom .pp_middle,div.light_square .pp_left,div.light_square .pp_middle,div.light_square .pp_right,div.light_square .pp_content,div.facebook .pp_content{background:#fff}
+div.light_rounded .pp_description,div.light_square .pp_description{margin-right:85px}
+div.light_rounded .pp_gallery a.pp_arrow_previous,div.light_rounded .pp_gallery a.pp_arrow_next,div.dark_rounded .pp_gallery a.pp_arrow_previous,div.dark_rounded .pp_gallery a.pp_arrow_next,div.dark_square .pp_gallery a.pp_arrow_previous,div.dark_square .pp_gallery a.pp_arrow_next,div.light_square .pp_gallery a.pp_arrow_previous,div.light_square .pp_gallery a.pp_arrow_next{margin-top:12px!important}
+div.light_rounded .pp_arrow_previous.disabled,div.dark_rounded .pp_arrow_previous.disabled,div.dark_square .pp_arrow_previous.disabled,div.light_square .pp_arrow_previous.disabled{background-position:0 -87px;cursor:default}
+div.light_rounded .pp_arrow_next.disabled,div.dark_rounded .pp_arrow_next.disabled,div.dark_square .pp_arrow_next.disabled,div.light_square .pp_arrow_next.disabled{background-position:-22px -87px;cursor:default}
+div.light_rounded .pp_loaderIcon,div.light_square .pp_loaderIcon{background:url(../prettyphoto/images/light_rounded/loader.gif) center center no-repeat}
+div.dark_rounded .pp_top .pp_middle,div.dark_rounded .pp_content,div.dark_rounded .pp_bottom .pp_middle{background:url(../prettyphoto/images/dark_rounded/contentPattern.png) top left repeat}
+div.dark_rounded .currentTextHolder,div.dark_square .currentTextHolder{color:#c4c4c4}
+div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline{color:#fff}
+.pp_top,.pp_bottom{height:20px;position:relative}
+* html .pp_top,* html .pp_bottom{padding:0 20px}
+.pp_top .pp_left,.pp_bottom .pp_left{height:20px;left:0;position:absolute;width:20px}
+.pp_top .pp_middle,.pp_bottom .pp_middle{height:20px;left:20px;position:absolute;right:20px}
+* html .pp_top .pp_middle,* html .pp_bottom .pp_middle{left:0;position:static}
+.pp_top .pp_right,.pp_bottom .pp_right{height:20px;left:auto;position:absolute;right:0;top:0;width:20px}
+.pp_fade,.pp_gallery li.default a img{display:none}{*----------<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="{$gallery_module_root}/templates/prettyphoto/jquery.prettyPhoto.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+	$("a[rel^='prettyPhoto']").prettyPhoto({
+			animation_speed: 'fast',
+			slideshow: 5000,
+			autoplay_slideshow: false,
+			show_title: true,
+			allow_resize: true,
+			counter_separator_label: '/',
+			theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+			hideflash: false, /* Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto */
+			overlay_gallery: true,
+			keyboard_shortcuts: true,
+			deeplinking: false
+	});
+});
+</script>*}";s:70:"LISEGlobalContent_mapi_pref_liseglobalcontent_default_summary_template";s:7:"default";s:43:"adminalert_b05a48b5f5c3e39922e569ad1dd82a8f";s:705:"a:2:{s:6:"module";s:0:"";s:4:"data";s:659:"O:35:"CMSMS\AdminAlerts\TranslatableAlert":10:{s:30:" CMSMS\AdminAlerts\Alert _name";s:24:"CmsSecurityCheckTaskmail";s:32:" CMSMS\AdminAlerts\Alert _module";N;s:33:" CMSMS\AdminAlerts\Alert _created";i:1737698995;s:34:" CMSMS\AdminAlerts\Alert _priority";s:5:"_high";s:32:" CMSMS\AdminAlerts\Alert _loaded";N;s:43:" CMSMS\AdminAlerts\TranslatableAlert _perms";a:1:{i:0;s:23:"Modify Site Preferences";}s:42:" CMSMS\AdminAlerts\TranslatableAlert _icon";N;s:46:" CMSMS\AdminAlerts\TranslatableAlert _titlekey";s:12:"config_issue";s:44:" CMSMS\AdminAlerts\TranslatableAlert _msgkey";s:16:"info_mail_notset";s:45:" CMSMS\AdminAlerts\TranslatableAlert _msgargs";N;}";}";s:20:"CmsSecurityCheckTask";s:10:"1737698995";s:19:"CmsVersionCheckTask";s:10:"1737698995";s:25:"PruneAdminlog_lastexecute";s:10:"1737699005";s:26:"ReduceAdminlog_lastexecute";s:10:"1737712434";s:34:"Gallery_mapi_pref_current_template";s:11:"prettyPhoto";s:36:"Gallery_mapi_pref_singleimg_template";s:11:"prettyPhoto";s:41:"Gallery_mapi_pref_singleimg_template_html";s:136:"<a class="group" href="{$image->file}" title="{$image->title}" rel="prettyPhoto"><img src="{$image->thumb}" alt="{$image->title}" /></a>";s:27:"Gallery_mapi_pref_urlprefix";s:7:"gallery";s:36:"Gallery_mapi_pref_allowed_extensions";s:16:"jpg,jpeg,gif,png";s:31:"Gallery_mapi_pref_maximagewidth";s:3:"800";s:32:"Gallery_mapi_pref_maximageheight";s:3:"640";s:33:"Gallery_mapi_pref_imagejpgquality";s:2:"80";s:33:"Gallery_mapi_pref_thumbjpgquality";s:2:"80";s:34:"Gallery_mapi_pref_imagewebpquality";s:2:"90";s:34:"Gallery_mapi_pref_thumbwebpquality";s:2:"90";s:30:"Gallery_mapi_pref_searchimages";s:1:"0";s:33:"Gallery_mapi_pref_use_permissions";s:1:"0";s:37:"Gallery_mapi_pref_newgalleries_active";s:1:"1";s:37:"Gallery_mapi_pref_use_comment_wysiwyg";s:1:"1";s:30:"Gallery_mapi_pref_editdirdates";s:1:"1";s:31:"Gallery_mapi_pref_editfiledates";s:1:"0";s:31:"Gallery_mapi_pref_fe_folderpath";s:65:"http://192.168.56.1/WEB/cmsms21/modules/Gallery/images/folder.png";s:31:"Gallery_mapi_pref_be_folderpath";s:70:"http://192.168.56.1/WEB/cmsms21/modules/Gallery/images/foldersmall.png";s:29:"LISE_mapi_pref_allow_autoscan";s:1:"0";s:32:"LISE_mapi_pref_allow_autoinstall";s:1:"1";s:31:"LISE_mapi_pref_allow_autoupdate";s:1:"1";s:12:"frontendlang";s:5:"en_US";s:15:"frontendwysiwyg";s:9:"MicroTiny";s:10:"logintheme";s:9:"OneEleven";s:14:"backendwysiwyg";s:0:"";s:17:"defaultdateformat";s:0:"";s:15:"thumbnail_width";s:2:"96";s:16:"thumbnail_height";s:2:"96";s:12:"searchmodule";s:6:"Search";s:40:"AceSyntax_mapi_pref_frontend_auto_height";s:1:"0";s:37:"AceSyntax_mapi_pref_frontend_fontsize";s:4:"14px";s:35:"AceSyntax_mapi_pref_frontend_height";s:3:"400";s:41:"AceSyntax_mapi_pref_frontend_height_units";s:2:"px";s:44:"AceSyntax_mapi_pref_frontend_syntaxarea_mode";s:4:"html";s:45:"AceSyntax_mapi_pref_frontend_syntaxarea_theme";s:6:"github";s:34:"AceSyntax_mapi_pref_frontend_width";s:3:"500";s:40:"AceSyntax_mapi_pref_frontend_width_units";s:2:"px";s:43:"adminalert_6c90bdde8f818884b1fbe817ca38f0e7";s:708:"a:2:{s:6:"module";s:0:"";s:4:"data";s:662:"O:35:"CMSMS\AdminAlerts\TranslatableAlert":10:{s:30:" CMSMS\AdminAlerts\Alert _name";s:26:"CmsSecurityCheckTaskconfig";s:32:" CMSMS\AdminAlerts\Alert _module";N;s:33:" CMSMS\AdminAlerts\Alert _created";i:1737698995;s:34:" CMSMS\AdminAlerts\Alert _priority";s:5:"_high";s:32:" CMSMS\AdminAlerts\Alert _loaded";N;s:43:" CMSMS\AdminAlerts\TranslatableAlert _perms";a:1:{i:0;s:23:"Modify Site Preferences";}s:42:" CMSMS\AdminAlerts\TranslatableAlert _icon";N;s:46:" CMSMS\AdminAlerts\TranslatableAlert _titlekey";s:14:"security_issue";s:44:" CMSMS\AdminAlerts\TranslatableAlert _msgkey";s:15:"config_writable";s:45:" CMSMS\AdminAlerts\TranslatableAlert _msgargs";N;}";}";s:69:"LISEGlobalContent_mapi_pref_liseglobalcontent_default_detail_template";s:7:"default";s:69:"LISEGlobalContent_mapi_pref_liseglobalcontent_default_search_template";s:7:"default";s:71:"LISEGlobalContent_mapi_pref_liseglobalcontent_default_category_template";s:7:"default";s:70:"LISEGlobalContent_mapi_pref_liseglobalcontent_default_archive_template";s:7:"default";s:37:"LISEGlobalContent_mapi_pref_sortorder";s:3:"ASC";s:40:"LISEGlobalContent_mapi_pref_adminsection";s:7:"content";s:38:"LISEGlobalContent_mapi_pref_url_prefix";s:17:"liseglobalcontent";s:39:"LISEGlobalContent_mapi_pref_urltemplate";s:32:"{Prefix|lower}/{ItemTitle|lower}";s:42:"LISEGlobalContent_mapi_pref_alias_template";s:51:"{ItemTitle|lower}_{ItemNextID|string_format:"%06u"}";s:40:"LISEGlobalContent_mapi_pref_friendlyname";s:14:"Global Content";s:41:"LISEGlobalContent_mapi_pref_item_singular";s:4:"Item";s:39:"LISEGlobalContent_mapi_pref_item_plural";s:5:"Items";s:38:"LISEGlobalContent_mapi_pref_item_title";s:5:"Title";s:54:"LISEGlobalContent_mapi_pref_inactive_item_triggers_404";s:1:"1";s:42:"LISEGlobalContent_mapi_pref_moddescription";s:77:"LISE allows you to create lists that you can display throughout your website.";s:38:"LISEGlobalContent_mapi_pref_hide_alias";s:1:"0";s:37:"LISEGlobalContent_mapi_pref_hide_slug";s:1:"1";s:45:"LISEGlobalContent_mapi_pref_hide_time_control";s:1:"0";s:40:"LISEGlobalContent_mapi_pref_auto_upgrade";s:1:"1";s:45:"LISEGlobalContent_mapi_pref_separate_settings";s:1:"0";s:77:"LISEOperatingBusiness_mapi_pref_liseoperatingbusiness_default_detail_template";s:7:"default";s:78:"LISEOperatingBusiness_mapi_pref_liseoperatingbusiness_default_summary_template";s:7:"default";s:33:"LISENews_mapi_pref_reindex_search";s:1:"0";s:29:"LISENews_mapi_pref_detailpage";s:2:"51";s:30:"LISENews_mapi_pref_summarypage";s:2:"39";s:33:"LISENews_mapi_pref_title_template";s:61:"{ItemSingular|capitalize} - {ItemNextID|string_format:"%06u"}";s:30:"LISENews_mapi_pref_subcategory";s:1:"0";s:38:"LISENews_mapi_pref_local_mode_instance";s:2:"-1";s:33:"LISENews_mapi_pref_display_inline";s:1:"0";s:33:"LISENews_mapi_pref_items_per_page";s:2:"20";s:28:"LISENews_mapi_pref_item_cols";s:0:"";s:38:"LISENews_mapi_pref_display_create_date";s:1:"0";s:37:"LISENews_mapi_pref_title_display_mode";s:1:"0";s:33:"LISENews_mapi_pref_title_auto_gen";s:1:"0";s:36:"LISENews_mapi_pref_separate_settings";s:1:"0";s:31:"LISENews_mapi_pref_submit_on_pn";s:1:"0";s:31:"LISENews_mapi_pref_auto_upgrade";s:1:"0";s:36:"LISENews_mapi_pref_hide_time_control";s:1:"1";s:28:"LISENews_mapi_pref_hide_slug";s:1:"0";s:29:"LISENews_mapi_pref_hide_alias";s:1:"0";s:33:"LISENews_mapi_pref_moddescription";s:77:"LISE allows you to create lists that you can display throughout your website.";s:45:"LISENews_mapi_pref_inactive_item_triggers_404";s:1:"1";s:29:"LISENews_mapi_pref_item_title";s:5:"Title";s:30:"LISENews_mapi_pref_item_plural";s:5:"Items";s:32:"LISENews_mapi_pref_item_singular";s:4:"Item";s:31:"LISENews_mapi_pref_friendlyname";s:11:"News Spaper";s:33:"LISENews_mapi_pref_alias_template";s:51:"{ItemTitle|lower}_{ItemNextID|string_format:"%06u"}";s:29:"LISENews_mapi_pref_url_prefix";s:4:"news";s:30:"LISENews_mapi_pref_urltemplate";s:32:"{Prefix|lower}/{ItemTitle|lower}";s:31:"LISENews_mapi_pref_adminsection";s:7:"content";s:28:"LISENews_mapi_pref_sortorder";s:3:"ASC";s:52:"LISENews_mapi_pref_lisenews_default_archive_template";s:7:"default";s:53:"LISENews_mapi_pref_lisenews_default_category_template";s:7:"default";s:51:"LISENews_mapi_pref_lisenews_default_search_template";s:7:"default";s:51:"LISENews_mapi_pref_lisenews_default_detail_template";s:7:"default";s:52:"LISENews_mapi_pref_lisenews_default_summary_template";s:7:"default";s:77:"LISEOperatingBusiness_mapi_pref_liseoperatingbusiness_default_search_template";s:7:"default";s:79:"LISEOperatingBusiness_mapi_pref_liseoperatingbusiness_default_category_template";s:7:"default";s:78:"LISEOperatingBusiness_mapi_pref_liseoperatingbusiness_default_archive_template";s:7:"default";s:41:"LISEOperatingBusiness_mapi_pref_sortorder";s:3:"ASC";s:44:"LISEOperatingBusiness_mapi_pref_adminsection";s:7:"content";s:42:"LISEOperatingBusiness_mapi_pref_url_prefix";s:17:"operatingbusiness";s:43:"LISEOperatingBusiness_mapi_pref_urltemplate";s:32:"{Prefix|lower}/{ItemTitle|lower}";s:46:"LISEOperatingBusiness_mapi_pref_alias_template";s:17:"{ItemTitle|lower}";s:44:"LISEOperatingBusiness_mapi_pref_friendlyname";s:18:"Operating Business";s:45:"LISEOperatingBusiness_mapi_pref_item_singular";s:4:"Item";s:43:"LISEOperatingBusiness_mapi_pref_item_plural";s:5:"Items";s:42:"LISEOperatingBusiness_mapi_pref_item_title";s:5:"Title";s:58:"LISEOperatingBusiness_mapi_pref_inactive_item_triggers_404";s:1:"0";s:46:"LISEOperatingBusiness_mapi_pref_moddescription";s:148:"LISE allows you to create lists that you can display throughout your website.
+
+
+Type:
+Residential
+F&B
+Hospitality
+Retail $ Tranding
+Tranding";s:42:"LISEOperatingBusiness_mapi_pref_hide_alias";s:1:"0";s:41:"LISEOperatingBusiness_mapi_pref_hide_slug";s:1:"0";s:49:"LISEOperatingBusiness_mapi_pref_hide_time_control";s:1:"1";s:44:"LISEOperatingBusiness_mapi_pref_auto_upgrade";s:1:"1";s:49:"LISEOperatingBusiness_mapi_pref_separate_settings";s:1:"0";s:44:"LISEOperatingBusiness_mapi_pref_submit_on_pn";s:1:"0";s:46:"LISEOperatingBusiness_mapi_pref_title_auto_gen";s:1:"0";s:50:"LISEOperatingBusiness_mapi_pref_title_display_mode";s:1:"0";s:51:"LISEOperatingBusiness_mapi_pref_display_create_date";s:1:"0";s:41:"LISEOperatingBusiness_mapi_pref_item_cols";s:17:"district,category";s:46:"LISEOperatingBusiness_mapi_pref_items_per_page";s:2:"20";s:51:"LISEOperatingBusiness_mapi_pref_local_mode_instance";s:2:"-1";s:46:"LISEOperatingBusiness_mapi_pref_display_inline";s:1:"0";s:43:"LISEOperatingBusiness_mapi_pref_subcategory";s:1:"0";s:46:"LISEOperatingBusiness_mapi_pref_title_template";s:40:"{ItemSingular|capitalize} - {ItemNextID}";s:42:"LISEOperatingBusiness_mapi_pref_detailpage";s:2:"52";s:43:"LISEOperatingBusiness_mapi_pref_summarypage";s:2:"41";s:46:"LISEOperatingBusiness_mapi_pref_reindex_search";s:1:"0";s:28:"Search_mapi_pref_savephrases";s:5:"false";s:29:"Search_mapi_pref_alpharesults";s:5:"false";s:27:"Search_mapi_pref_resultpage";s:2:"-1";s:39:"LISEMediaSolutions_mapi_pref_url_prefix";s:14:"mediasolutions";s:40:"LISEMediaSolutions_mapi_pref_urltemplate";s:32:"{Prefix|lower}/{ItemTitle|lower}";s:43:"LISEMediaSolutions_mapi_pref_alias_template";s:30:"{ItemTitle|lower}_{ItemNextID}";s:41:"LISEMediaSolutions_mapi_pref_friendlyname";s:15:"Media Solutions";s:42:"LISEMediaSolutions_mapi_pref_item_singular";s:4:"Item";s:40:"LISEMediaSolutions_mapi_pref_item_plural";s:5:"Items";s:39:"LISEMediaSolutions_mapi_pref_item_title";s:5:"Title";s:55:"LISEMediaSolutions_mapi_pref_inactive_item_triggers_404";s:1:"1";s:43:"LISEMediaSolutions_mapi_pref_moddescription";s:77:"LISE allows you to create lists that you can display throughout your website.";s:39:"LISEMediaSolutions_mapi_pref_hide_alias";s:1:"0";s:38:"LISEMediaSolutions_mapi_pref_hide_slug";s:1:"0";s:46:"LISEMediaSolutions_mapi_pref_hide_time_control";s:1:"1";s:41:"LISEMediaSolutions_mapi_pref_auto_upgrade";s:1:"1";s:46:"LISEMediaSolutions_mapi_pref_separate_settings";s:1:"0";s:41:"LISEMediaSolutions_mapi_pref_submit_on_pn";s:1:"0";s:43:"LISEMediaSolutions_mapi_pref_title_auto_gen";s:1:"0";s:47:"LISEMediaSolutions_mapi_pref_title_display_mode";s:1:"0";s:48:"LISEMediaSolutions_mapi_pref_display_create_date";s:1:"0";s:38:"LISEMediaSolutions_mapi_pref_item_cols";s:13:"category,tags";s:43:"LISEMediaSolutions_mapi_pref_items_per_page";s:2:"20";s:48:"LISEMediaSolutions_mapi_pref_local_mode_instance";s:2:"-1";s:43:"LISEMediaSolutions_mapi_pref_display_inline";s:1:"0";s:40:"LISEMediaSolutions_mapi_pref_subcategory";s:1:"0";s:43:"LISEMediaSolutions_mapi_pref_title_template";s:61:"{ItemSingular|capitalize} - {ItemNextID|string_format:"%06u"}";s:39:"LISEMediaSolutions_mapi_pref_detailpage";s:2:"45";s:40:"LISEMediaSolutions_mapi_pref_summarypage";N;s:43:"LISEMediaSolutions_mapi_pref_reindex_search";s:1:"1";s:42:"LISEMediaSolutions_mapi_pref_import_values";s:6:"a:0:{}";}
